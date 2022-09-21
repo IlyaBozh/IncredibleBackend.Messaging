@@ -26,6 +26,35 @@ public static class MessagingSetup
 
     }
 
+    public static void RegisterConsumersAndProducers(
+        this IServiceCollection services,
+        Action<IBusRegistrationConfigurator>? addConsumers,
+        Action<IRabbitMqBusFactoryConfigurator, IBusRegistrationContext>? configureConsumers,
+        Action<IRabbitMqBusFactoryConfigurator>? configureProducers,
+        string login,
+        string password,
+        string serverName
+    )
+    {
+        services.AddMassTransit(config =>
+        {
+            addConsumers?.Invoke(config);
+
+            config.UsingRabbitMq((ctx, cfg) =>
+            {
+                cfg.Host(serverName, h =>
+                {
+                    h.Username(login);
+                    h.Password(password);
+                });
+
+                configureConsumers?.Invoke(cfg, ctx);
+                configureProducers?.Invoke(cfg);
+            });
+        });
+
+    }
+
     public static void RegisterConsumer<T>(
         this IRabbitMqBusFactoryConfigurator cfg,
         IBusRegistrationContext ctx,
