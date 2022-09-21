@@ -1,0 +1,42 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <PackageId>IncredibleBackend.Rmq</PackageId>
+    <Authors>IlyaBozh</Authors>
+    <Company>IlyaBozh</Company>
+    <PackageTags>RabbitMQ, Backend</PackageTags>
+    <PackageIcon>photo_2022-06-14_10-24-11.jpg</PackageIcon>
+    <PackageLicenseExpression>MIT OR Apache-2.0</PackageLicenseExpression>
+    <Version>1.1.6</Version>
+
+    <Description>
+      Models and Enums library for microservicing
+      1.1.6 - Removed MessageConsumer
+      1.1.5 - Add MessageConsumer
+      1.1.4 - Add Interface for MessageProducer
+      1.1.3 - Add MessageProducer
+      1.1.2 - Change signature of ConfigurProducers
+      1.1.1 - Chang register consumers and producers
+      1.1.0 - Chang register consumers and producers
+      1.0.3 - Add method for consumer
+      1.0.2 - Change method for produser
+      1.0.1 - Change method for produser
+      1.0.0 - Package was created
+    </Description>
+    
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="IncredibleBackend" Version="2.2.0" />
+    <PackageReference Include="MassTransit" Version="8.0.6" />
+    <PackageReference Include="MassTransit.RabbitMQ" Version="8.0.6" />
+    <None Include="C:\Users\iliai\source\repos\IncredibleBackend.Rmq\photo_2022-06-14_10-24-11.jpg">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>
